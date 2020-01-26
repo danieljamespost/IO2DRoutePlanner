@@ -1,7 +1,7 @@
-[submodule "third_party/pugixml"]
-	path = third_party/pugixml
+[submodule "thirdparty/pugixml"]
+	path = thirdparty/pugixml
 	url = https://github.com/zeux/pugixml.git
-[submodule "third_party/googletest"]
-	path = third_party/googletest
+[submodule "thirdparty/googletest"]
+	path = thirdparty/googletest
 	url = https://github.com/abseil/googletest.git
 
