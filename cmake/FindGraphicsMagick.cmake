@@ -87,3 +87,4 @@ if (GRAPHICSMAGICK_FOUND AND NOT TARGET GraphicsMagick::GraphicsMagick)
         )
     endif()
 endif()
+

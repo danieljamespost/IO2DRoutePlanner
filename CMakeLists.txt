@@ -48,3 +48,4 @@ add_executable(test test/utest_rp_a_star_search.cpp)
 target_link_libraries(test gtest_main route_planner pugixml)
 add_test(NAME test COMMAND test)
 unset(TESTING CACHE)
+
