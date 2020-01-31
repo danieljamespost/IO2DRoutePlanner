@@ -8,39 +8,39 @@
 #include "route_model.h"
 
 class RoutePlanner {
- public:
-  RoutePlanner(RouteModel &model, float start_x, float start_y, float end_x,
-               float end_y);
+public:
+    RoutePlanner(RouteModel& model, float start_x, float start_y, float end_x,
+        float end_y);
 
-  float GetDistance() const { return distance; }
-  void AStarSearch();
-  RouteModel::Node Search(RouteModel::Node *, RouteModel::Node *);
+    float GetDistance() const { return distance; }
+    void AStarSearch();
+    RouteModel::Node Search(RouteModel::Node*, RouteModel::Node*);
 
-  void AddNeighbors(RouteModel::Node *current_node);
-  float CalculateHValue(RouteModel::Node const *node);
-  std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *);
-  RouteModel::Node *NextNode();
-  void PopulatePath(RouteModel::Node *, std::vector<RouteModel::Node> *);
+    void AddNeighbors(RouteModel::Node* current_node);
+    float CalculateHValue(RouteModel::Node const* node);
+    std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node*);
+    RouteModel::Node* NextNode();
+    void PopulatePath(RouteModel::Node*, std::vector<RouteModel::Node>*);
 
- private:
-  bool isAtEnd(RouteModel::Node *current_node) {
-    return current_node->x == this->end_node->x &&
-           current_node->y == this->end_node->y;
-  }
-  bool isAtStart(RouteModel::Node *current_node) {
-    return current_node->x == this->start_node->x &&
-           current_node->y == this->start_node->y;
-  }
+private:
+    bool isAtEnd(RouteModel::Node* current_node)
+    {
+        return current_node->x == this->end_node->x && current_node->y == this->end_node->y;
+    }
+    bool isAtStart(RouteModel::Node* current_node)
+    {
+        return current_node->x == this->start_node->x && current_node->y == this->start_node->y;
+    }
 
-  void sortOpenList();
+    void sortOpenList();
 
-  std::vector<RouteModel::Node *> open_list;
+    std::vector<RouteModel::Node*> open_list;
 
-  RouteModel::Node *start_node;
-  RouteModel::Node *end_node;
+    RouteModel::Node* start_node;
+    RouteModel::Node* end_node;
 
-  float distance = 0.0f;
-  RouteModel &m_Model;
+    float distance = 0.0f;
+    RouteModel& m_Model;
 };
 
 #endif
